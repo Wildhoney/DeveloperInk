@@ -7,7 +7,7 @@
 ![License MIT](http://img.shields.io/badge/License-MIT-lightgrey.svg?style=flat-square)
 
 * **clone:** `git clone git@github.com:Wildhoney/DeveloperInk.git`
-* **official:** `git clone git@github.com:Wildhoney/DeveloperInk.git`
+* **official:** [http://zurb.com/ink/](http://zurb.com/ink/)
 
 <img src="http://i.imgur.com/zqJCkme.jpg" />
 
