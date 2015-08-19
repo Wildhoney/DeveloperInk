@@ -2,6 +2,9 @@
 
     "use strict";
 
+    const exec = require('child_process').exec;
+    exec('npm run watch');
+
     const express     = require('express');
     const app         = express();
     const server      = require('http').createServer(app);

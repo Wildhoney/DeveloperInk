@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "gulp test",
+    "watch": "gulp sass && gulp watch",
     "make": "iojs .devink/script/make.js",
     "current": "iojs .devink/script/current.js",
     "start": "iojs .devink/script/server.js"
