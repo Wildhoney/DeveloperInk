@@ -1,5 +1,5 @@
 mail:
-	service: Gmail
+	provider: Gmail
 	username: user@example.org
 	password: example123
 	subject: Developer Ink. - Test Email
