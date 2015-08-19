@@ -1,0 +1,13 @@
+# config
+config.yml
+
+# os
+.DS_Store
+
+# ide
+.idea
+
+# npm
+node_modules
+npm-debug.log
+
