@@ -40,10 +40,10 @@ Initialises the server on port 5000 for the current template whilst watching for
 
 Uses the aforementioned configuration options to send a test email to the `recipients` via your chosen `provider`.
 
+> **Note:** For Gmail you need to enable access for less secure apps (see [Stackoverflow](http://stackoverflow.com/questions/26948516/nodemailer-invalid-login)): https://www.google.com/settings/security/lesssecureapps
+
 ### Render Template
 
 > `npm run render developerink.html`
 
 Render the finished email template to the `developerink.html` file, which inlines all CSS.
-
-> **Note:** For Gmail you need to enable access for less secure apps (see [Stackoverflow](http://stackoverflow.com/questions/26948516/nodemailer-invalid-login)): https://www.google.com/settings/security/lesssecureapps
