@@ -6,7 +6,7 @@
 
         return $gulp.src('templates/.current/sass/default.scss')
                     .pipe(sass().on('error', sass.logError))
-                    .pipe($gulp.dest('templates/.current/sass'));
+                    .pipe($gulp.dest('.devink/build'));
 
     });
 

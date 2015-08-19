@@ -14,3 +14,7 @@ npm-debug.log
 # templates
 templates/*
 !templates/.gitkeep
+
+# build
+.devink/build/*
+!.devink/build/.gitkeep
