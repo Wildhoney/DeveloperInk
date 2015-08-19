@@ -1,8 +1,13 @@
 (function main($export) {
 
-    const fs         = require('fs');
-    const path       = require('path');
-    const Handlebars = require('Handlebars');
+    const fs           = require('fs');
+    const path         = require('path');
+    const yaml         = require('js-yaml');
+    const Styliner     = require('styliner');
+    const Handlebars   = require('Handlebars');
+    const nodemailer   = require('nodemailer');
+    const htmlToText   = require('nodemailer-html-to-text').htmlToText;
+    const htmlMinifier = require('html-minifier').minify;
 
     /**
      * @constant DEFAULT_VERSION
@@ -19,12 +24,12 @@
     /**
      * @method inkFile
      * @param {String} filename
-     * @param {String} [version]
+     * @param {String} [version=DEFAULT_VERSION]
      * @return {String}
      */
     const inkFile = function inkFile(filename, version) {
         const filePath = path.normalize(`${__dirname}/ink/${version || DEFAULT_VERSION}/${filename}`);
-        return fs.readFileSync(filePath, 'UTF-8');
+        return fs.readFileSync(filePath, 'utf8');
     };
 
     /**
@@ -34,7 +39,7 @@
      */
     const buildFile = function buildFile(filename) {
         const filePath = path.normalize(`${__dirname}/build/${filename}`);
-        return fs.readFileSync(filePath, 'UTF-8');
+        return fs.readFileSync(filePath, 'utf8');
     };
 
     /**
@@ -44,7 +49,7 @@
      */
     const templateFile = function templateFile(filename) {
         const filePath = path.normalize(`${CURRENT_DIRECTORY}/${filename}`);
-        return fs.readFileSync(filePath, 'UTF-8');
+        return fs.readFileSync(filePath, 'utf8');
     };
 
     /**
@@ -94,17 +99,58 @@
         },
 
         /**
-         * @method getRenderedTemplate
-         * @param {String} [version]
+         * @method renderTemplate
+         * @param {String} [version=DEFAULT_VERSION]
          * @return {String}
          */
-        getRenderedTemplate: function getRenderedTemplate(version) {
+        renderTemplate: function renderTemplate(version) {
 
             const inkFiles      = this.getInkFiles(version);
             const template      = Handlebars.compile(inkFiles.index);
             const templateFiles = this.getTemplateFiles();
 
             return template({ css: [inkFiles.css, templateFiles.css].join('\n'), template: templateFiles.index });
+
+        },
+
+        /**
+         * @method sendTemplate
+         * @param {String} [version=DEFAULT_VERSION]
+         */
+        sendTemplate: function sendTemplate(version) {
+
+            const configPath = path.normalize(fs.readFileSync(`${__dirname}/../config.yml`, 'utf8'));
+            const config     = yaml.safeLoad(configPath, 'utf8').mail;
+
+            const transporter = nodemailer.createTransport({
+                service: config.provider,
+                auth: {
+                    user: config.email,
+                    pass: config.password
+                }
+            });
+
+            transporter.use('compile', htmlToText());
+            const styliner = new Styliner(this.getCurrent());
+
+            styliner.processHTML(this.renderTemplate(version)).then(function(html) {
+
+                const mailOptions = {
+                    from: config.email,
+                    to: config.recipients.join(' '),
+                    subject:config.subject,
+                    html: htmlMinifier(html, { collapseWhitespace: true })
+                };
+
+                transporter.sendMail(mailOptions, function(error, info) {
+                    if(error){
+                        return console.log(error);
+                    }
+                    console.log('Message sent: ' + info.response);
+
+                });
+
+            }.bind(this));
 
         }
 

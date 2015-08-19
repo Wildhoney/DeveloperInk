@@ -1,6 +1,6 @@
 mail:
 	provider: Gmail
-	username: user@example.org
+	email: user@example.org
 	password: example123
 	subject: Developer Ink. - Test Email
 	recipients:

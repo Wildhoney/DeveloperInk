@@ -30,6 +30,8 @@ Using the `start` command you will automatically get a whole host of useful feat
 
 Once you have created your first email template using [Ink's documentation](http://zurb.com/ink/docs.php) for reference, you'll likely want to see how your email renders. For this you can issue the above command, which will use the configuration previously created to send an email. All of the inlining of your SASS and Ink's CSS is done for you automagically!
 
+> **Note:** For Gmail you need to enable access for less secure apps (see [Stackoverflow](http://stackoverflow.com/questions/26948516/nodemailer-invalid-login)): https://www.google.com/settings/security/lesssecureapps
+
 ## Switching Templates
 
 Once you have a handful of email templates in the `templates` directory, you'll want to be able to switch between them. For this you can use the `npm run current template-name` where `template-name` is the name of your template's directory.

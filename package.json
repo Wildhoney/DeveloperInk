@@ -4,7 +4,7 @@
   "description": "Facilitates the use of ZURB's Ink for developers using the CLI with SASS, Email Testing, Compilation, etc...",
   "main": "index.js",
   "scripts": {
-    "test": "gulp test",
+    "test": "iojs .devink/script/test.js",
     "watch": "gulp sass && gulp watch",
     "make": "iojs .devink/script/make.js",
     "current": "iojs .devink/script/current.js",
@@ -36,10 +36,15 @@
     "gulp-inline-css": "^2.0.0",
     "gulp-sass": "^2.0.4",
     "handlebars": "^3.0.3",
+    "html-minifier": "^0.7.2",
     "iojs": "^1.0.0",
+    "js-yaml": "^3.3.1",
+    "juice2": "^1.3.1",
     "minimist": "^1.1.3",
     "ncp": "^2.0.0",
-    "nodemailer": "^1.4.0"
+    "nodemailer": "^1.4.0",
+    "nodemailer-html-to-text": "^1.0.2",
+    "styliner": "^0.8.9"
   },
   "devDependencies": {}
 }
