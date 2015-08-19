@@ -7,8 +7,24 @@
 ![License MIT](http://img.shields.io/badge/License-MIT-lightgrey.svg?style=flat-square)
 
 * **clone:** `git clone git@github.com:Wildhoney/DeveloperInk.git`
+* **official:** `git clone git@github.com:Wildhoney/DeveloperInk.git`
 
 <img src="http://i.imgur.com/zqJCkme.jpg" />
+
+## Getting Started
+
+Ink is all about creating email templates that work in a wide array of email clients. With the unpredictability of email clients &mdash; especially legacy email clients and web-based clients such as Gmail &mdash; every little helps when it comes to putting together your email client. `DeveloperInk` lets Ink do what it does best &ndash; the HTML markup and structure, whereas `DeveloperInk` provides an extension for developers.
+
+* Code your styles in individual SASS files using partials;
+* Auto-refresh of SASS updates and changes to your HTML document;
+* In-built Node server for testing your email templates;
+* Ability to quickly send test emails using common email providers;
+* Handle multiple email templates to keep all templates in one place;
+* Compile your email templates to a chosen destination once you're happy;
+* Keep your HTML templates free of Ink related markup and styles;
+* Automatically inlines all of your SASS styles to support web-based clients;
+
+To get started with `DeveloperInk` you'll need to create your configuration file &mdash; `config.yml` &mdash; an example is provided in the `config-example.yml` file, therefore copy that file and rename it to `config.yml` and modify the appropriate settings in order to be able to send test emails. Once you're all up and running with the configuration, create your first template using `npm run make my-first-template` and [follow the steps below](#configuration) depending on what you're after.
 
 ### Configuration
 
@@ -49,3 +65,5 @@ Uses the aforementioned configuration options to send a test email to the `recip
 > `npm run render developerink.html`
 
 Render the finished email template to the `developerink.html` file, which inlines all CSS.
+
+<img src="http://codeanchor.com/wp-content/uploads/2013/12/ink.png" />
