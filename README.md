@@ -6,7 +6,7 @@
 &nbsp;
 ![License MIT](http://img.shields.io/badge/License-MIT-lightgrey.svg?style=flat-square)
 
-* **npm:** `npm i mocktail -D`
+* **clone:** `git clone git@github.com:Wildhoney/DeveloperInk.git`
 
 ### Configuration
 
