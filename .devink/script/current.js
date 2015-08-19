@@ -6,7 +6,10 @@
     const current = require('path').normalize(__dirname + '/../../templates/.current');
     const fs      = require('fs');
 
-    fs.unlinkSync(current);
+    if (fs.existsSync(current)) {
+        fs.unlinkSync(current);
+    }
+
     fs.symlinkSync(path, current, 'dir');
 
 })(require('minimist'));
