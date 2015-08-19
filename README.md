@@ -24,7 +24,9 @@ Ink is all about creating email templates that work in a wide array of email cli
 * Keep your HTML templates free of Ink related markup and styles;
 * Automatically inlines all of your SASS styles to support web-based clients;
 
-To get started with `DeveloperInk` you'll need to create your configuration file &mdash; `config.yml` &mdash; an example is provided in the `config-example.yml` file, therefore copy that file and rename it to `config.yml` and modify the appropriate settings in order to be able to send test emails. Once you're all up and running with the configuration, create your first template using `npm run make my-first-template` and [follow the steps below](#configuration) depending on what you're after.
+To get started with `DeveloperInk` you'll need to create your configuration file &mdash; `config.yml` &mdash; an example is provided in the `config-example.yml` file, therefore copy that file &mdash; or run `npm run init` &mdash; rename it to `config.yml` and modify the appropriate settings in order to be able to send test emails.
+
+Once you're all up and running with the configuration, create your first template using `npm run make my-first-template` and [follow the steps below](#configuration) depending on what you're after.
 
 ### Configuration
 

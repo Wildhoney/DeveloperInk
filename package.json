@@ -4,6 +4,7 @@
   "description": "Facilitates the use of ZURB's Ink for developers using the CLI with SASS, Email Testing, Compilation, etc...",
   "main": "index.js",
   "scripts": {
+    "init": "cp config-example.yml config.yml",
     "test": "gulp sass && iojs .devink/script/test.js",
     "watch": "gulp sass && gulp watch",
     "make": "iojs .devink/script/make.js",
