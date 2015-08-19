@@ -1,0 +1,29 @@
+{
+  "name": "developer-ink",
+  "version": "0.1.0",
+  "description": "Facilitates the use of ZURB's Ink for Developers using the CLI with SASS, Email Testing, Compilation, etc...",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wildhoney/DeveloperInk.git"
+  },
+  "keywords": [
+    "zurb",
+    "ink",
+    "email",
+    "templates",
+    "emails",
+    "outlook",
+    "thunderbird",
+    "client"
+  ],
+  "author": "Adam Timberlake <adam.timberlake@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Wildhoney/DeveloperInk/issues"
+  },
+  "homepage": "https://github.com/Wildhoney/DeveloperInk#readme"
+}
