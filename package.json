@@ -25,5 +25,10 @@
   "bugs": {
     "url": "https://github.com/Wildhoney/DeveloperInk/issues"
   },
-  "homepage": "https://github.com/Wildhoney/DeveloperInk#readme"
+  "homepage": "https://github.com/Wildhoney/DeveloperInk#readme",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4",
+    "nodemailer": "^1.4.0"
+  }
 }
