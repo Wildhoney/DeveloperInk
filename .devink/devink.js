@@ -108,8 +108,18 @@
             const inkFiles      = this.getInkFiles(version);
             const template      = Handlebars.compile(inkFiles.index);
             const templateFiles = this.getTemplateFiles();
+            const styliner      = new Styliner(this.getCurrent(), { compact: true, fixYahooMQ: true });
 
-            return template({ css: [inkFiles.css, templateFiles.css].join('\n'), template: templateFiles.index });
+            return new Promise(function(resolve) {
+
+                const templateHtml = template({ css: [inkFiles.css, templateFiles.css].join('\n'), template: templateFiles.index });
+                const minifiedHtml = htmlMinifier(templateHtml, { collapseWhitespace: true, minifyCSS: true });
+
+                styliner.processHTML(minifiedHtml).then(function(html) {
+                    resolve(html);
+                }.bind(this));
+
+            });
 
         },
 
@@ -131,26 +141,27 @@
             });
 
             transporter.use('compile', htmlToText());
-            const styliner = new Styliner(this.getCurrent());
 
-            styliner.processHTML(this.renderTemplate(version)).then(function(html) {
+            this.renderTemplate(version).then(function(template) {
 
                 const mailOptions = {
                     from: config.email,
                     to: config.recipients.join(' '),
                     subject:config.subject,
-                    html: htmlMinifier(html, { collapseWhitespace: true })
+                    html: template
                 };
 
                 transporter.sendMail(mailOptions, function(error, info) {
-                    if(error){
+
+                    if (error) {
                         return console.log(error);
                     }
+
                     console.log('Message sent: ' + info.response);
 
                 });
 
-            }.bind(this));
+            });
 
         }
 

@@ -12,7 +12,11 @@
     const port        = ($process.env.PORT || 5000);
 
     app.get('/', function(req, res) {
-        res.send(devInk.renderTemplate());
+
+        devInk.renderTemplate().then(function(template) {
+            res.send(template);
+        });
+
     });
 
     app.use(express.static(devInk.getCurrent()));
