@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "gulp test",
-    "create": "iojs .devink/script/create.js",
-    "server": "iojs .devink/script/server.js"
+    "make": "iojs .devink/script/make.js",
+    "current": "iojs .devink/script/current.js",
+    "start": "iojs .devink/script/server.js"
   },
   "repository": {
     "type": "git",
