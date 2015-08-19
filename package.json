@@ -8,8 +8,8 @@
     "watch": "gulp sass && gulp watch",
     "make": "iojs .devink/script/make.js",
     "current": "iojs .devink/script/current.js",
-    "render": "iojs .devink/script/render.js",
-    "start": "iojs .devink/script/server.js"
+    "render": "gulp sass && iojs .devink/script/render.js",
+    "start": "gulp sass && iojs .devink/script/server.js"
   },
   "repository": {
     "type": "git",

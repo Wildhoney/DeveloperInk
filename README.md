@@ -8,6 +8,8 @@
 
 * **clone:** `git clone git@github.com:Wildhoney/DeveloperInk.git`
 
+<img src="http://i.imgur.com/zqJCkme.jpg" />
+
 ### Configuration
 
 > `npm run init`

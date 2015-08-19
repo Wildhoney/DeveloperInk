@@ -2,7 +2,7 @@ mail:
 	provider: Gmail
 	email: user@example.org
 	password: example123
-	subject: Developer Ink. - Test Email
+	subject: Developer Ink - Test Email
 	recipients:
 		- anotheruser@example.org
 		- andanother@example.org
