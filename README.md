@@ -1,5 +1,13 @@
 # Developer Ink
 
+![Travis](http://img.shields.io/travis/Wildhoney/DeveloperInk.svg?style=flat-square)
+&nbsp;
+![npm](http://img.shields.io/npm/v/developer-ink.svg?style=flat-square)
+&nbsp;
+![License MIT](http://img.shields.io/badge/License-MIT-lightgrey.svg?style=flat-square)
+
+* **npm:** `npm i mocktail -D`
+
 ### Configuration
 
 > `npm run init`
@@ -26,7 +34,7 @@ Work on another template where the `template-name` is the name given to your tem
 
 Initialises the server on port 5000 for the current template whilst watching for any changes to your SASS files for automatic compilation to CSS.
 
-### Client Testing
+### Email Testing
 
 > `npm run test`
 
