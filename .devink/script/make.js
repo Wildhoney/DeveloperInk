@@ -10,7 +10,10 @@
         fs.mkdirSync(path);
     }
 
-    fs.unlinkSync(current);
+    if (fs.existsSync(current)) {
+        fs.unlinkSync(current);
+    }
+
     fs.symlinkSync(path, current, 'dir');
 
 })(require('minimist'));
