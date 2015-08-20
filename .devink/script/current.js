@@ -6,7 +6,7 @@
     const current = require('path').normalize(__dirname + '/../../templates/.current');
     const fs      = require('fs');
 
-    if (fs.existsSync(current)) {
+    if (fs.lstatSync(current).isSymbolicLink() || fs.existsSync(current)) {
         fs.unlinkSync(current);
     }
 

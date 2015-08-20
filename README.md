@@ -6,8 +6,8 @@
 &nbsp;
 ![License MIT](http://img.shields.io/badge/License-MIT-lightgrey.svg?style=flat-square)
 
-* **clone:** `git clone git@github.com:Wildhoney/DeveloperInk.git`
-* **official:** [http://zurb.com/ink/](http://zurb.com/ink/)
+* **Clone:** `git clone git@github.com:Wildhoney/DeveloperInk.git`
+* **Official:** [http://zurb.com/ink/](http://zurb.com/ink/)
 
 <img src="http://i.imgur.com/zqJCkme.jpg" />
 
@@ -67,5 +67,7 @@ Uses the aforementioned configuration options to send a test email to the `recip
 > `npm run render developerink.html`
 
 Render the finished email template to the `developerink.html` file, which inlines all CSS.
+
+---
 
 <img src="http://codeanchor.com/wp-content/uploads/2013/12/ink.png" />
