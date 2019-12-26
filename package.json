@@ -37,7 +37,7 @@
     "gulp": "^3.9.0",
     "gulp-inline-css": "^2.0.0",
     "gulp-sass": "^2.0.4",
-    "handlebars": "^3.0.3",
+    "handlebars": "^4.5.3",
     "html-minifier": "^0.7.2",
     "iojs": "^1.0.0",
     "js-yaml": "^3.3.1",
